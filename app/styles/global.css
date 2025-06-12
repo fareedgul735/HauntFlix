@@ -66,6 +66,23 @@ body {
     margin: 0;
 }
 
+@media (max-width:992px) {
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-links ul {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        gap: 4px;
+    }
+}
+
 .nav-links ul li {
     position: relative;
     font-size: 1.1rem;

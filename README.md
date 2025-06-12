@@ -16,15 +16,12 @@ HauntFlix is a horror-themed web application where users can explore spine-chill
 # 👨‍💻 Built With:
 Next.js for fast rendering and routing
 
-React Icons for theme toggle (dark/light with scary icons)
 
 Pure CSS (Global Styles) for custom horror UI & animations
 
-Responsive Design for all screen sizes
 
 Image Optimization with Next.js <Image />
 
-Spooky Sound Effects on first load for immersive horror feel
 
 Smooth animations on scroll & page load
 

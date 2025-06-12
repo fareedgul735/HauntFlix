@@ -4,24 +4,8 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const HomePage = () => {
-
-  const [showIntro, setShowIntro] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowIntro(false)
-    }, 4000)
-
-    return () => clearTimeout(timer)
-  }, [])
   return (
     <>
-      {showIntro && (
-        <audio autoPlay>
-          <source src="/scream.mp3" type="audio/mpeg" />
-        </audio>
-      )}
-
       <div>
         <div className="hero">
           <div className="overlay" />
