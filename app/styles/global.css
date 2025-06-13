@@ -160,11 +160,10 @@ body {
 }
 
 
-/* Home Page  */
 
 .hero {
     height: 100vh;
-    background: url('/hunated.jpg') no-repeat center center/cover;
+    background: url("/anabelli.jpg") no-repeat center center/cover;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -219,90 +218,102 @@ body {
 }
 
 .featured {
-    background: #111;
+    background: #0b0b0b;
     padding: 60px 20px;
     text-align: center;
     color: white;
+    position: relative;
+    overflow: hidden;
 }
 
 .featured h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 40px;
-    font-family: 'Creepster';
+    font-family: 'Creepster', cursive;
+    color: crimson;
+    animation: flickerText 2s infinite;
 }
 
-.cards {
+.carousel-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
+    align-items: center;
 }
 
-.card {
+.carousel-slide {
+    position: relative;
+    width: 80vw;
+    height: 70vh;
     background: #111;
-    color: #fff;
     border: 2px solid #b30000;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 250px;
     text-align: center;
     cursor: pointer;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    animation: shakeFade 2.5s infinite;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 }
 
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
-}
-
-.card-img {
-    overflow: hidden;
-    height: 350px;
-}
-
-.card-img img {
+.carousel-img {
     object-fit: cover;
-    width: 100%;
-    height: 100%;
     transition: transform 0.4s ease;
 }
 
-.card:hover .card-img img {
-    transform: scale(1.1);
+.carousel-slide:hover .carousel-img {
+    transform: scale(1.05);
 }
 
-.card p {
-    font-size: 1.1rem;
-    padding: 0.8rem;
-    background-color: #220000;
+.carousel-slide p {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(34, 0, 0, 0.8);
+    color: crimson;
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
     margin: 0;
 }
 
 
 .quote {
     background: #000;
-    color: #fff;
-    font-family: 'Creepster';
+    color: crimson;
+    font-family: 'Creepster', cursive;
     font-size: 2rem;
     text-align: center;
     padding: 50px 20px;
-    color: crimson;
     animation: flickerText 3s infinite;
 }
 
-@keyframes fadeIn {
+@keyframes shakeFade {
     0% {
+        transform: translateX(0) scale(1);
         opacity: 0;
-        transform: translateY(20px);
+    }
+
+    20% {
+        transform: translateX(-5px) rotate(-1deg);
+    }
+
+    40% {
+        transform: translateX(5px) rotate(1deg);
+    }
+
+    60% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(3px) rotate(1deg);
     }
 
     100% {
+        transform: translateX(0) scale(1.05);
         opacity: 1;
-        transform: translateY(0);
     }
 }
+
 
 @keyframes flickerText {
 
@@ -311,12 +322,18 @@ body {
         opacity: 1;
     }
 
-    50% {
-        opacity: 0.6;
+    45% {
+        opacity: 0.4;
+    }
+
+    60% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 0.3;
     }
 }
-
-/* Home Page  */
 
 
 

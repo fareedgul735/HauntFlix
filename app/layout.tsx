@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 
+import "./styles/global.css"
 
 function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 

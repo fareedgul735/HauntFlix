@@ -1,9 +1,27 @@
 "use client"
 
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+
 
 const HomePage = () => {
+
+  const [index, setIndex] = useState(0)
+
+  const images = [
+    { src: "/conjuring.jpg", title: "The Conjuring" },
+    { src: "/anabelle.jpg", title: "The Anabelli" },
+    { src: "/nun.webp", title: "The Nun" },
+  ]
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length)
+    }, 2000)
+    return () => clearInterval(timer)
+
+  }, [])
+
   return (
     <>
       <div>
@@ -16,26 +34,20 @@ const HomePage = () => {
 
         <section className="featured">
           <h2>Featured Terrors</h2>
-          <div className="cards">
-            <div className="card">
+          {images[index] && <div className="carousel-container">
+            <div className="carousel-slide fade">
               <div className="card-img">
-                <Image src="/conjuring.jpeg" alt="conjuring" width={250} height={350} />
+                <Image
+                  src={images[index].src}
+                  alt={images[index].title}
+                  width={1250}
+                  height={550}
+                  className="carousel-img"
+                />
               </div>
-              <p>The Conjuring</p>
+              <p>{images[index].title}</p>
             </div>
-            <div className="card">
-              <div className="card-img">
-                <Image src="/anabelle.jpg" alt="annabelle" width={250} height={350} />
-              </div>
-              <p>Annabelle</p>
-            </div>
-            <div className="card">
-              <div className="card-img">
-                <Image src="/nuning.jpg" alt="nun" width={250} height={350} />
-              </div>
-              <p>The Nun</p>
-            </div>
-          </div>
+          </div>}
         </section>
 
         <section className="quote">
