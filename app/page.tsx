@@ -19,7 +19,6 @@ const HomePage = () => {
       setIndex((prev) => (prev + 1) % images.length)
     }, 2000)
     return () => clearInterval(timer)
-
   }, [])
 
   return (
