@@ -607,6 +607,48 @@ body {
   color: #777;
   margin-top: 10px;
 }
+.small-navbar-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.small-navbar-links ul li {
+  position: relative;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.small-navbar-links ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.small-navbar-links ul li:hover a {
+  color: #ff0000;
+}
+.small-navbar-links ul li:active a {
+  color: rgb(255, 0, 0) !important;
+}
+
+.small-navbar-links ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background-color: #ff0000;
+  transition: width 0.3s ease-in-out;
+}
+
+.small-navbar-links ul li:hover::after {
+  width: 100%;
+}
 
 @keyframes flickerText {
   0%,
@@ -632,6 +674,9 @@ body {
 }
 
 @media (max-width: 992px) {
+  .drawer-parent {
+    display: block !important;
+  }
   .header {
     display: flex;
     justify-content: space-between;
@@ -644,48 +689,6 @@ body {
   .logo {
     font-size: 1.4rem;
     gap: 4px;
-  }
-  .small-navbar-links ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 0;
-    margin: 0;
-  }
-
-  .small-navbar-links ul li {
-    position: relative;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-
-  .small-navbar-links ul li a {
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-  }
-
-  .small-navbar-links ul li:hover a {
-    color: #ff0000;
-  }
-  .small-navbar-links ul li:active a {
-    color: rgb(255, 0, 0) !important;
-  }
-
-  .small-navbar-links ul li::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background-color: #ff0000;
-    transition: width 0.3s ease-in-out;
-  }
-
-  .small-navbar-links ul li:hover::after {
-    width: 100%;
   }
 }
 
@@ -752,7 +755,7 @@ body {
 
 @media (max-width: 576px) {
   .hero {
-    height: 80vh; 
+    height: 80vh;
     padding: 0 1rem;
   }
 

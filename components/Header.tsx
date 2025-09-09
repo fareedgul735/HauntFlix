@@ -37,6 +37,7 @@ const Header = () => {
         </ul>
       </div>
       <Drawer
+        className="drawer"
         title={
           <div className="logo">
             <Image
@@ -68,6 +69,7 @@ const Header = () => {
       <div onClick={showDarwer} className="skeleton-img">
         <Image src={"/skeleton.png"} alt="skeleton" width={50} height={50} />
       </div>
+      
     </div>
   );
 };
