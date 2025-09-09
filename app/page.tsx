@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { images } from "./lib/constants";
 import { Carousel } from "antd";
 
