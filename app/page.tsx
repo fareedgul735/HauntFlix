@@ -1,26 +1,11 @@
-"use client"
+"use client";
 
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { images } from "./lib/constants";
+import { Carousel } from "antd";
 
 const HomePage = () => {
-
-  const [index, setIndex] = useState(0)
-
-  const images = [
-    { src: "/conjuring.jpg", title: "The Conjuring" },
-    { src: "/anabelle.jpg", title: "The Anabelli" },
-    { src: "/nun.webp", title: "The Nun" },
-  ]
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length)
-    }, 2000)
-    return () => clearInterval(timer)
-  })
-
   return (
     <>
       <div>
@@ -33,20 +18,29 @@ const HomePage = () => {
 
         <section className="featured">
           <h2>Featured Terrors</h2>
-          {images[index] && <div className="carousel-container">
-            <div className="carousel-slide fade">
-              <div className="card-img">
-                <Image
-                  src={images[index].src}
-                  alt={images[index].title}
-                  width={1250}
-                  height={550}
-                  className="carousel-img"
-                />
-              </div>
-              <p>{images[index].title}</p>
-            </div>
-          </div>}
+          <div className="carousel-container">
+            <Carousel
+              autoplay
+              vertical
+              dotPosition="right"
+              className="custom-carousel"
+            >
+              {images.map((img, index) => (
+                <div key={index} className="carousel-slide fade">
+                  <div className="card-img">
+                    <Image
+                      src={img.src}
+                      alt={img.title}
+                      width={1250}
+                      height={550}
+                      className="carousel-img"
+                    />
+                  </div>
+                  <p>{img.title}</p>
+                </div>
+              ))}
+            </Carousel>
+          </div>
         </section>
 
         <section className="quote">
@@ -57,4 +51,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage
+export default HomePage;

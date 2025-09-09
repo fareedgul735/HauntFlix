@@ -64,22 +64,6 @@ body {
   margin: 0;
 }
 
-@media (max-width: 992px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav-links ul {
-    display: none;
-  }
-
-  .logo {
-    font-size: 1.4rem;
-    gap: 4px;
-  }
-}
-
 .nav-links ul li {
   position: relative;
   font-size: 1.1rem;
@@ -232,33 +216,30 @@ body {
   animation: flickerText 2s infinite;
 }
 
+.featured {
+  text-align: center;
+  padding: 2rem 0;
+}
+
 .carousel-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .carousel-slide {
-  position: relative;
-  width: 80vw;
-  height: 70vh;
-  background: #111;
-  border: 2px solid #b30000;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-img {
   overflow: hidden;
-  text-align: center;
-  cursor: pointer;
-  animation: shakeFade 2.5s infinite;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
+  border-radius: 10px;
 }
 
 .carousel-img {
   object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.carousel-slide:hover .carousel-img {
-  transform: scale(1.05);
+  border-radius: 10px;
 }
 
 .carousel-slide p {
@@ -647,6 +628,64 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-links ul {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    gap: 4px;
+  }
+  .small-navbar-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .small-navbar-links ul li {
+    position: relative;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .small-navbar-links ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+  }
+
+  .small-navbar-links ul li:hover a {
+    color: #ff0000;
+  }
+  .small-navbar-links ul li:active a {
+    color: rgb(255, 0, 0) !important;
+  }
+
+  .small-navbar-links ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #ff0000;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .small-navbar-links ul li:hover::after {
+    width: 100%;
   }
 }
 
