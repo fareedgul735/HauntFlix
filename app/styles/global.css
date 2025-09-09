@@ -701,3 +701,71 @@ body {
     gap: 10px;
   }
 }
+
+@media (max-width: 992px) {
+  .carousel-container {
+    width: 95%;
+  }
+
+  .carousel-img {
+    max-height: 300px;
+  }
+
+  .featured h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-slide p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-img {
+    max-height: 200px;
+  }
+
+  .featured h2 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-slide p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .explore-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 80vh; 
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .explore-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}

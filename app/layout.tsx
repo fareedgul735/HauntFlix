@@ -5,7 +5,7 @@ import "./styles/global.css";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Horror Layout",
+  title: "hauntflix",
   icons: {
     icon: "/anabelle.jpg",
   },
